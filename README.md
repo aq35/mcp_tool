@@ -23,12 +23,20 @@ npm install
 npm run build
 ```
 
-環境変数を設定してください。
+`.env` を作成して設定してください（`dotenv` で自動読み込みされます）。
 
 ```bash
-export GITHUB_TOKEN=ghp_xxx
-# GitHub Enterprise の場合のみ
-# export GITHUB_API_BASE_URL=https://github.example.com/api/v3
+cp .env.example .env
+```
+
+`.env` 例:
+
+```bash
+GITHUB_TOKEN=ghp_xxx
+TEST_REPOSITORY=owner/repo
+TEST_PULL_NUMBER=123
+# TEST_INCLUDE_RESOLVED_REPLIES=true
+# GITHUB_API_BASE_URL=https://github.example.com/api/v3
 ```
 
 ## 起動
@@ -42,6 +50,28 @@ npm start
 ```bash
 npm run dev
 ```
+
+## 実動作テスト
+
+このブランチ内だけで動作確認を完結する場合は、`.env` の `TEST_REPOSITORY` と `TEST_PULL_NUMBER` を設定したうえで、以下を実行してください。
+
+```bash
+npm run test:collect
+```
+
+引数で明示指定することもできます。
+
+```bash
+npm run test:collect -- owner/repo 123
+```
+
+第3引数で `includeResolvedReplies` を指定できます。
+
+```bash
+npm run test:collect -- owner/repo 123 false
+```
+
+このコマンドはローカルでMCPサーバーを起動し、`collect_pr_feedback` を実行して結果JSONを表示します。
 
 ## MCPクライアント設定例
 
