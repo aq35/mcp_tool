@@ -1,0 +1,29 @@
+{
+  "name": "github-pr-review-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for collecting GitHub PR comments and helping with review responses",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "github",
+    "pull-request",
+    "review"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.15.0",
+    "@octokit/rest": "^22.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.2"
+  }
+}
