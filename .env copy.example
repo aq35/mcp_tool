@@ -1,0 +1,9 @@
+# GitHub personal access token with repo scope for private repos
+GITHUB_TOKEN=ghp_xxx
+# Default target for local collection test command
+TEST_REPOSITORY=owner/repo
+TEST_PULL_NUMBER=123
+# Optional: set false to exclude reply comments by default
+# TEST_INCLUDE_RESOLVED_REPLIES=true
+# Optional custom API endpoint for GitHub Enterprise
+# GITHUB_API_BASE_URL=https://github.example.com/api/v3
